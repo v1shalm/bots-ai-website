@@ -1,0 +1,23 @@
+.ind-realestate {
+  .re-table { display: flex; flex-direction: column; padding-top: 6px; }
+  .re-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 40px;
+    border-bottom: 1px solid var(--ss-line-faint);
+  }
+  /* The flagged row is an inset, rounded fill; its hairlines step aside */
+  .re-row--flag {
+    height: 56px;
+    margin: 4px calc(-1 * var(--gut) - 30px) 4px -8px;
+    padding: 0 calc(var(--gut) + 30px) 0 8px;
+    border-radius: 10px 0 0 10px;
+    border-bottom-color: transparent;
+    background: var(--ss-accent-soft);
+  }
+  .re-who { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .re-name { font-size: 12px; font-weight: 500; line-height: 16px; color: var(--ss-text-strong); }
+  .re-sub { font-size: 11px; line-height: 14px; color: var(--ss-text); }
+  .re-var { margin: 0 0 0 auto; color: var(--ss-accent-text); }
+}

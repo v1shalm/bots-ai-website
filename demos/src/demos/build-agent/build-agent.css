@@ -1,0 +1,208 @@
+.ba .ss-stage {
+  --ss-font: 'Geist', 'Helvetica Neue', Arial, sans-serif;
+  --ss-accent: #459ce7;
+  --ss-accent-soft: rgba(69, 156, 231, 0.12);
+  --ss-accent-text: #2f7fd0;
+  --ss-text-strong: #0f0d14;
+  --ss-text: #615d6a;
+  --ss-text-faint: #736f7c;
+  --ss-line: rgba(15, 13, 20, 0.1);
+  --ss-canvas: #f6f6f3;
+  --ss-success: #0a8f5a;
+  --ss-success-soft: rgba(10, 143, 90, 0.1);
+  --ss-success-text: #0a7a4d;
+  --ss-warning-soft: rgba(196, 120, 0, 0.12);
+  --ss-warning-text: #8a5300;
+  --ba-in: cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  background: transparent;
+  font: 400 12px/1.4 var(--ss-font);
+  color: var(--ss-text-strong);
+}
+
+.ba .ss-avatar,
+.ba .ss-row__title,
+.ba .ss-badge { font-weight: 500; }
+
+/* The window hangs from the top-right corner: its bar is above the card's top
+   edge and it runs off the right edge. The caption sits in the card's own
+   bottom-left, outside this stage. */
+.ba-win {
+  position: absolute;
+  top: -38px;
+  left: 36px;
+  width: 624px;
+  height: 402px;
+  box-shadow: var(--ss-shadow-hero);
+}
+
+.ba-side {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  padding: 0 10px;
+}
+
+.ba-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 26px;
+  padding: 0 8px;
+  border-radius: 6px;
+}
+
+.ba-nav[data-on] { background: var(--ss-ink-2); }
+
+.ba-main {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  min-height: 0;
+  background: var(--ss-surface);
+  /* 60px of the window is past the stage: the content stops a gutter short of
+     what is visible */
+  padding: 20px 76px 0 16px;
+  overflow: hidden;
+}
+
+.ba-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+.ba-title {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ss-text-strong);
+}
+
+.ba-counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--ss-line);
+  border-radius: 8px;
+}
+
+.ba-counter__label {
+  font-size: 11.5px;
+  color: var(--ss-text);
+}
+
+.ba-counter__value {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--ss-text-strong);
+}
+
+.ba-list {
+  display: grid;
+  gap: 2px;
+  margin: 0 -4px;
+}
+
+.ba-card {
+  margin: 0 4px 6px;
+  border: 1px solid var(--ss-line);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 13, 20, 0.05), 0 6px 16px -8px rgba(15, 13, 20, 0.14);
+}
+
+/* Columns: amount and status keep fixed tracks, so real and filler rows line up */
+.ba-cols {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.ba-amt { width: 76px; text-align: right; }
+.ba-money { font-size: 12px; font-variant-numeric: tabular-nums; color: var(--ss-text-strong); }
+.ba-status { min-width: 104px; }
+.ba-pill { margin-left: auto; }
+.ba .ba-cols > .ba-pill { margin-right: 0; }
+.ba-cols:has(> .ba-pill) { width: auto; }
+
+.ba-checks {
+  display: grid;
+  gap: 2px;
+  padding: 2px 12px 12px 46px;
+}
+
+.ba-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 22px;
+  color: var(--ss-text-faint);
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
+
+.ba-line[data-tone='done'] { color: var(--ss-text-strong); }
+.ba-line[data-tone='wait'] { color: var(--ss-warning-text); }
+.ba-line__lead { display: inline-grid; width: 16px; height: 16px; place-items: center; flex: none; }
+.ba-wait { color: var(--ss-warning-text); }
+
+.ba-actions {
+  display: flex;
+  gap: 8px;
+  padding: 2px 12px 12px 46px;
+}
+
+.ba-btn {
+  display: inline-grid;
+  place-items: center;
+  height: 28px;
+  padding: 0 12px;
+  border: 1px solid var(--ss-line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ss-text-strong);
+  font-size: 12px;
+  font-weight: 500;
+  transition: transform 0.12s ease, background-color 0.15s ease;
+}
+
+.ba-btn--primary {
+  padding: 0 16px;
+  border-color: #2f7fd0;
+  background: #2f7fd0;
+  color: #fff;
+}
+
+.ba-btn[data-hover] { background: var(--ss-ink-1); }
+.ba-btn--primary[data-hover] { background: #2a73bd; }
+.ba-btn[data-pressed] { transform: scale(0.97); }
+
+.ba-rest { position: absolute; right: 96px; top: 150px; width: 40px; height: 20px; }
+
+/* ---- Compact: a tighter crop, the amount moves under the supplier ---- */
+.ba .ss-stage[data-layout='compact'] .ba-win {
+  top: -38px;
+  left: 16px;
+  width: 382px;
+  height: 308px;
+}
+
+.ba .ss-stage[data-layout='compact'] .ba-main {
+  padding: 16px 56px 0 14px;
+}
+
+.ba .ss-stage[data-layout='compact'] .ba-head,
+.ba .ss-stage[data-layout='compact'] .ba-counter { height: 36px; }
+.ba .ss-stage[data-layout='compact'] .ba-head { margin-bottom: 6px; }
+.ba .ss-stage[data-layout='compact'] .ba-status { min-width: 96px; }
+.ba .ss-stage[data-layout='compact'] .ba-checks,
+.ba .ss-stage[data-layout='compact'] .ba-actions { padding-left: 46px; }
+.ba .ss-stage[data-layout='compact'] .ba-rest { right: 70px; top: 130px; }

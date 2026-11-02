@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo preview</title>
+  <style>
+    @font-face { font-family: 'Geist'; src: url('../scanline/fonts/geist-regular.woff2') format('woff2'); font-weight: 400; }
+    @font-face { font-family: 'Geist'; src: url('../scanline/fonts/geist-medium.woff2') format('woff2'); font-weight: 500; }
+    @font-face { font-family: 'Geist Serif'; src: url('../scanline/fonts/geistserif-regular.woff2') format('woff2'); font-weight: 400; }
+    html, body { margin: 0; background: #ffffff; font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    /* The slot sits on the page's soft card surface, as it will on the site. */
+    #slot-wrap { padding: 40px; }
+    #example { width: var(--w, 720px); background: #f6f6f3; }
+  </style>
+</head>
+<body>
+  <div id="slot-wrap"><div id="example"></div></div>
+  <script type="module" src="/src/preview.tsx"></script>
+</body>
+</html>

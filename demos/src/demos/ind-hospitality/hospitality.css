@@ -1,0 +1,27 @@
+.ind-hospitality {
+  .hs-stack { display: flex; flex-direction: column; gap: 8px; padding-top: 14px; }
+  .hs-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    height: 48px;
+    padding: 0 14px;
+    border-radius: 10px;
+    background: var(--ss-canvas);
+  }
+  .hs-card--pick {
+    height: 64px;
+    background: var(--ss-surface);
+    box-shadow: 0 0 0 1px rgba(15, 13, 20, 0.08), 0 8px 16px -8px rgba(15, 13, 20, 0.18);
+  }
+  .hs-who { display: flex; flex-direction: column; gap: 3px; }
+  .hs-name { font-size: 12px; font-weight: 500; line-height: 16px; color: var(--ss-text-strong); }
+  .hs-tag { font-size: 11px; font-weight: 500; line-height: 14px; color: var(--ss-accent-text); }
+  .hs-price { margin-top: 0; }
+}
+
+.ind-hospitality .ss-stage[data-layout='compact'] {
+  .hs-card { height: 56px; }
+  .hs-card--pick { height: 60px; }
+}

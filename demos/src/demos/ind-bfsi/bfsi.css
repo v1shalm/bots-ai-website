@@ -1,0 +1,22 @@
+.ind-bfsi {
+  .bf-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 12px;
+  }
+  .ss-stage[data-layout='compact'] .bf-lines { display: none; }
+  .bf-num {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    background: var(--ss-accent-soft);
+    color: var(--ss-accent-text);
+    font-size: 10.5px;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,4 @@
+.ind-gems {
+  /* Compact keeps three checks; a fourth would be sliced by the crop */
+  .ss-stage[data-layout='compact'] .ind-row:nth-child(n+4) { display: none; }
+}
